@@ -1,0 +1,23 @@
+@page "/mensagem"
+@rendermode InteractiveServer
+
+<button class="btn btn-primary" @onclick="AlterarVisibilidade">Clique Aqui</button>
+
+@if (exibirMensagem)
+    {
+        <p>Bem-vindo ao desenvolvimento web com .NET 10!</p>
+        <p>Mensagem Exibida</p>
+    }
+    else
+    {
+        <p>Mensagem Oculta</p>
+    }
+    
+@code {
+    private bool exibirMensagem = false;
+
+    private void AlterarVisibilidade()
+    {
+        exibirMensagem = !exibirMensagem;
+    }
+}

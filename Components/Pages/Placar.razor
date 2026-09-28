@@ -1,0 +1,35 @@
+@page "/placar"
+@rendermode InteractiveServer
+
+<h1>Placar</h1>
+
+<!-- Botão 1 - Adiciona 1 -->
+<button class="btn btn-primary" @onclick="botao1">Aumentar</button>
+<!-- Botão 2 - Subtrai 1 -->
+<button class="btn btn-primary" @onclick="botao2">Diminuir</button>
+<!-- Botão 3 - Zera todos -->
+<button class="btn btn-primary" @onclick="botao3">Zerar</button>
+
+<p role="status">Pontos: @pontos</p>
+
+@code{
+    private int pontos = 0;
+
+    private void botao1()
+    {
+        pontos++; // Aumenta o contador do Botão 1.
+    }
+
+    private void botao2()
+    {
+        if (pontos > 0)
+        {
+            pontos--; // Diminui o contador do Botão 2, mas não permite que seja menor que 0.
+        }
+    }
+
+    private void botao3()
+    {
+        pontos = 0; // Zera o contador do Botão 3.
+    }
+}
